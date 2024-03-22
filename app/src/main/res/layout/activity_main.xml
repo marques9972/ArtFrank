@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/inputDia"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Dia"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/inputMes"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <EditText
+        android:id="@+id/inputMes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Mês"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/inputDia"
+        app:layout_constraintEnd_toStartOf="@id/inputAno"
+        app:layout_constraintWidth_percent="0.3"/>
+
+    <EditText
+        android:id="@+id/inputAno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Ano"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/inputMes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.4"/>
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        app:layout_constraintTop_toBottomOf="@id/inputDia"
+        app:layout_constraintStart_toEndOf="@id/btnAnterior"
+        app:layout_constraintEnd_toStartOf="@id/btnProximo"
+        app:layout_constraintBottom_toBottomOf="@id/btnAnterior"/>
+
+    <ImageButton
+        android:id="@+id/btnAnterior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintTop_toBottomOf="@id/inputDia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btnBuscar" />
+
+    <ImageButton
+        android:id="@+id/btnProximo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_forward_24"
+        app:layout_constraintTop_toBottomOf="@id/inputDia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btnBuscar" />
+
+
+    <TextView
+        android:id="@+id/textMovimentacoes"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Movimentações do dia"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/btnBuscar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/textSemMovimentacoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Não há nenhuma movimentação registrada nessa data"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/textMovimentacoes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/textMovimentacoes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_movimentacao" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

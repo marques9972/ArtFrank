@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "26160748616",
+    "project_id": "marques-adm",
+    "storage_bucket": "marques-adm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:26160748616:android:59c3dc1b6df9a8d642a07d",
+        "android_client_info": {
+          "package_name": "com.example.artfrank"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnnXAyqvhVgurQNBjm5_7BoYmN5m7jSQc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
